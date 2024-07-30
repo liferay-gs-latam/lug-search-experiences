@@ -15,7 +15,6 @@
 **/.web_bundle_build
 .gradle
 .idea
-# /bundles
 /gradle-*.properties
 /plugins-sdk/**/classes
 /plugins-sdk/**/ivy.xml.MD5
@@ -34,25 +33,25 @@ yarn.lock
 docker-compose/atabase-dump/*
 !database-dump/.keep
 
-# bundles/data/document_library/*
-# !bundles/data/document_library/.keep
+bundles/data/document_library/*
+!bundles/data/document_library/.keep
 
-# bundles/data/elasticsearch-data/*
-# !bundles/data/elasticsearch-data/.keep
+bundles/data/elasticsearch-data/*
+!bundles/data/elasticsearch-data/.keep
 
-# bundles/deploy/*
-# !bundles/deploy/.keep
+bundles/deploy/*
+!bundles/deploy/.keep
 
-# bundles/logs/*
-# !bundles/logs/.keep
+bundles/logs/*
+!bundles/logs/.keep
 
-# bundles/osgi/configs/*
-# !bundles/osgi/configs/.keep
+bundles/osgi/configs/*
+!bundles/osgi/configs/.keep
 
-# bundles/osgi/modules/*
-# !bundles/osgi/modules/.keep
+bundles/osgi/modules/*
+!bundles/osgi/modules/.keep
 
-# bundles/osgi/war/*
-# !bundles/osgi/war/.keep
+bundles/osgi/war/*
+!bundles/osgi/war/.keep
 
-# bundles/*/*
+bundles/*/*
