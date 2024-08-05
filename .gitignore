@@ -48,10 +48,4 @@ bundles/logs/*
 bundles/osgi/configs/*
 !bundles/osgi/configs/.keep
 
-bundles/osgi/modules/*
-!bundles/osgi/modules/.keep
-
-bundles/osgi/war/*
-!bundles/osgi/war/.keep
-
 bundles/*/*

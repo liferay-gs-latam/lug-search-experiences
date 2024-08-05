@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
 
   database:
@@ -16,6 +14,7 @@ services:
   liferay:
     image: liferay/portal:7.4.3.120-ga120
     environment:
+      - JAVA_VERSION=zulu11
       - LIFERAY_JVM_OPTS=-Xms3g -Xmx4g
       - LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_DRIVER_UPPERCASEC_LASS_UPPERCASEN_AME=com.mysql.cj.jdbc.Driver
       - LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_URL=jdbc:mysql://database/lportal?characterEncoding=utf8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&serverTimezone=GMT&useFastDateParsing=false&useUnicode=true
@@ -24,6 +23,16 @@ services:
       - LIFERAY_MODULE_PERIOD_FRAMEWORK_PERIOD_PROPERTIES_PERIOD_OSGI_PERIOD_CONSOLE=0.0.0.0:11311
       - LIFERAY_RETRY_PERIOD_JDBC_PERIOD_ON_PERIOD_STARTUP_PERIOD_DELAY=20
       - LIFERAY_RETRY_PERIOD_JDBC_PERIOD_ON_PERIOD_STARTUP_PERIOD_MAX_PERIOD_RETRIES=5
+      - LIFERAY_COMPANY_PERIOD_DEFAULT_PERIOD_LOCALE=en_US
+      - LIFERAY_COMPANY_PERIOD_DEFAULT_PERIOD_TIME_PERIOD_ZONE=UTC-3
+      - LIFERAY_LAYOUT_PERIOD_USER_PERIOD_PRIVATE_PERIOD_LAYOUTS_PERIOD_AUTO_PERIOD_CREATE=false
+      - LIFERAY_LAYOUT_PERIOD_USER_PERIOD_PRIVATE_PERIOD_LAYOUTS_PERIOD_ENABLED=false
+      - LIFERAY_LAYOUT_PERIOD_USER_PERIOD_PUBLIC_PERIOD_LAYOUTS_PERIOD_AUTO_PERIOD_CREATE=false
+      - LIFERAY_LAYOUT_PERIOD_USER_PERIOD_PUBLIC_PERIOD_LAYOUTS_PERIOD_ENABLED=false
+      - LIFERAY_LOCALES=pt_BR,es_ES,en_US
+      - LIFERAY_LOCALES_PERIOD_ENABLED=pt_BR,es_ES,en_US
+      - LIFERAY_DL_PERIOD_STORE_PERIOD_IMPL=com.liferay.portal.store.file.system.AdvancedFileSystemStore
+      - LIFERAY_UPGRADE_PERIOD_DATABASE_PERIOD_AUTO_PERIOD_RUN=true
     ports:
       - "8080:8080"
       - "11311:11311"
@@ -32,9 +41,7 @@ services:
       - ./docker-compose/liferay-files:/mnt/liferay/files
       - ./docker-compose/liferay-scripts:/mnt/liferay/scripts
       - ./bundles/deploy:/mnt/liferay/deploy
-      - ./bundles/osgi/modules:/opt/liferay/osgi/modules
       - ./bundles/osgi/configs:/opt/liferay/osgi/configs
-      - ./bundles/osgi/war:/opt/liferay/osgi/war
       - ./bundles/logs:/opt/liferay/logs
       - ./bundles/data/document_library:/opt/liferay/data/document_library
     depends_on:
@@ -49,5 +56,6 @@ services:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - "discovery.type=single-node"
       - "node.name=es-node1"
+      - "xpack.security.enabled=false"
     volumes:
       - ./bundles/data/elasticsearch-data:/usr/share/elasticsearch/data
