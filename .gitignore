@@ -50,7 +50,5 @@ bundles/logs/*
 
 bundles/osgi
 
-# bundles/*/*
-
 Backup
 temp
