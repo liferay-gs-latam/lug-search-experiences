@@ -1,4 +1,5 @@
-FROM elasticsearch:8.14.3
+# FROM elasticsearch:8.14.3
+FROM elasticsearch:7.17.4
 
 RUN ./bin/elasticsearch-plugin install analysis-icu \
     && ./bin/elasticsearch-plugin install analysis-kuromoji \

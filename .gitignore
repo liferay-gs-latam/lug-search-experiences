@@ -30,7 +30,7 @@ test-results
 package.json
 yarn.lock
 
-docker-compose/atabase-dump/*
+docker-compose/database-dump/*
 !database-dump/.keep
 
 bundles/data/document_library/*
@@ -38,6 +38,9 @@ bundles/data/document_library/*
 
 bundles/data/elasticsearch-data/*
 !bundles/data/elasticsearch-data/.keep
+
+bundles/data/elasticsearch-ext-data/*
+!bundles/data/elasticsearch-ext-data/.keep
 
 bundles/deploy/*
 !bundles/deploy/.keep
@@ -49,3 +52,6 @@ bundles/osgi/configs/*
 !bundles/osgi/configs/.keep
 
 bundles/*/*
+
+Backup
+temp

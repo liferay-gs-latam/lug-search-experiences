@@ -1,0 +1,4 @@
+Bundle-Name: LUG Search Request Contributor
+Bundle-SymbolicName: lug.search.request.contributor
+Bundle-Version: 1.0.0
+Liferay-Service: true
