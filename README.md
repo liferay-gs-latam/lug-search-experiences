@@ -47,3 +47,8 @@ mysqldump -uroot -proot lportal -c -B --column-statistics=0 --add-drop-database 
 
 After that, is safe to execute `docker compose down`, then in the next time you up the environment the state will be kept.
 
+# Stop
+
+```
+docker compose down
+```
