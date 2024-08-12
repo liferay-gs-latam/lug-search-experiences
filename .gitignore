@@ -40,6 +40,7 @@ bundles/data/elasticsearch-data/*
 !bundles/data/elasticsearch-data/.keep
 
 bundles/data/elasticsearch-ext-data/*
+bundles/data/elasticsearch-ext-data/nodes
 !bundles/data/elasticsearch-ext-data/.keep
 
 bundles/deploy/*
@@ -48,10 +49,9 @@ bundles/deploy/*
 bundles/logs/*
 !bundles/logs/.keep
 
-bundles/osgi/configs/*
-!bundles/osgi/configs/.keep
+bundles/osgi
 
-bundles/*/*
+# bundles/*/*
 
 Backup
 temp
